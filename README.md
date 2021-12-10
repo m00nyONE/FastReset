@@ -1,8 +1,4 @@
 # FastReset
-FastReset Addon for Elder Scrolls Online
-
-
-# FastReset
 
 ## This addon is made for players who want to complete trifectas in trials with their groups.
 
