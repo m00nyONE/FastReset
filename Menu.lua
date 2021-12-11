@@ -13,7 +13,7 @@ function FastReset.createMenu()
         author = "|cFFC0CBm00ny|r",
         version = FastReset.version,
         website = "https://github.com/m00nyONE/FastReset",
-        feedback = "",
+        feedback = "https://www.esoui.com/downloads/info3257-FastReset.html#comments",
         donation = FastReset.donate,
         slashCommand = "/frsettings",
         registerForRefresh = true,

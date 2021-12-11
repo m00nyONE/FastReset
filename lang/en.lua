@@ -17,6 +17,8 @@ local strings = {
     FASTRESET_DIALOG_PORT_TO_LEADER_TEXT = "Do you want to port back to the leader?",
     FASTRESET_DIALOG_PORT_TO_ULTI_HOUSE_TITLE = "PORT TO ULTI HOUSE",
     FASTRESET_DIALOG_PORT_TO_ULTI_HOUSE_TEXT = "Do you want to port to <<1>>'s house to refill your ulti?",
+    FASTRESET_DIALOG_EXIT_INSTANCE_TITLE = "EXIT INSTANCE",
+    FASTRESET_DIALOG_EXIT_INSTANCE_TEXT = "Do you want to leave the instance?",
 
     FASTRESET_MENU_SECTION_GENERAL = "general",
     FASTRESET_MENU_SECTION_OPTIONS = "options",

@@ -17,6 +17,8 @@ local strings = {
     FASTRESET_DIALOG_PORT_TO_LEADER_TEXT = "Möchtest du dich zum Gruppenleiter teleportieren?",
     FASTRESET_DIALOG_PORT_TO_ULTI_HOUSE_TITLE = "TELEPORT INS ULTI-HAUS",
     FASTRESET_DIALOG_PORT_TO_ULTI_HOUSE_TEXT = "Möchtest du dich in <<1>>'s Haus teleportieren um deine Ulti aufzuladen?",
+    FASTRESET_DIALOG_EXIT_INSTANCE_TITLE = "INSTANZ VERLASSEN",
+    FASTRESET_DIALOG_EXIT_INSTANCE_TEXT = "Möchtest du die Instanz verlassen?",
 
     FASTRESET_MENU_SECTION_GENERAL = "Allgemein",
     FASTRESET_MENU_SECTION_OPTIONS = "Optionen",

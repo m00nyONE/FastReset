@@ -2,7 +2,7 @@ FastReset = FastReset or {}
 FastReset.name = "FastReset"
 FastReset.color = "8B0000"
 FastReset.credits = "@m00nyONE"
-FastReset.version = "1.0.0"
+FastReset.version = "1.0.1"
 FastReset.slashCmdShort = "/fr"
 FastReset.slashCmdLong = "/fastreset"
 FastReset.variableVersion = 1
@@ -159,14 +159,20 @@ local function autoLeaveInstance()
     end
 
     -- use hodorreflexes when possible to exit the instance
-    if not HodorReflexes then
-        if CanExitInstanceImmediately() then
-            ExitInstanceImmediately()
+    if HodorReflexes then
+        if isLeader then
+            HodorReflexes.modules.share.SendExitInstance()
+            return
         end
+
+        HodorReflexes.ExitInstance()
         return
     end
-    HodorReflexes.modules.share.SendExitInstance()
 
+    LibAddonMenu2.util.ShowConfirmationDialog(
+        GetString(FASTRESET_DIALOG_EXIT_INSTANCE_TITLE),
+        GetString(FASTRESET_DIALOG_EXIT_INSTANCE_TEXT),
+        function() if CanExitInstanceImmediately() then ExitInstanceImmediately() end end)
 end
 
 -- start death detection
