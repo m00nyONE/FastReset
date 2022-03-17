@@ -8,14 +8,20 @@
 ## Title: FastReset
 ## Description: Reset instances faster
 ## Author: m00nyONE
-## Version: 1.0.1
-## AddOnVersion: 101
+## Version: 1.10.0
+## AddOnVersion: 011000
 ## SavedVariables: FastResetVars
-## DependsOn: LibAddonMenu-2.0
-## OptionalDependsOn: HodorReflexes
+## DependsOn: LibAddonMenu-2.0 LibSlashCommander
+## OptionalDependsOn: HodorReflexes 
 
 lang/en.lua
 lang/$(language).lua
 
-FastReset.lua
+data.lua
+logic.lua
+slashCommands.lua
 Menu.lua
+
+FastReset.lua
+
+bindings.xml

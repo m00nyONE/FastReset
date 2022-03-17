@@ -1,0 +1,24 @@
+<Bindings>
+    <Layer name="SI_KEYBINDINGS_LAYER_GENERAL">
+        <Category name="|c8B0000FastReset|r">
+            <Action name="FASTRESET_HOTKEY_TOGGLE">
+                <Down>FastReset.toggle()</Down>
+            </Action>
+            <Action name="FASTRESET_HOTKEY_AUTOMATION">
+                <Down>FastReset.TrialZone = GetUnitZone("player") FastReset.autoLeaveInstance()</Down>
+            </Action>
+            <Action name="FASTRESET_HOTKEY_RESET">
+                <Down>FastReset.ResetInstance()</Down>
+            </Action>
+            <Action name="FASTRESET_HOTKEY_ULTIHOME">
+                <Down>FastReset.PortToUltiHouse()</Down>
+            </Action>
+            <Action name="FASTRESET_HOTKEY_PORTTOLEADER">
+                <Down>JumpToGroupLeader()</Down>
+            </Action>
+            <Action name="FASTRESET_HOTKEY_LEAVE">
+                <Down>if CanExitInstanceImmediately() then ExitInstanceImmediately() end</Down>
+            </Action>
+        </Category>
+    </Layer>
+</Bindings>

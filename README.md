@@ -20,4 +20,16 @@ No longer waste any time. Just do it!
 
 * you have to set the house first where you want to get ported to. Do this in the addonsettings
 
+There are also some handy chat commands you can use:
+- /fr = /fastreset
+- /fr           : triggers the whole automation process manually
+- /fr enable    : enables FastReset
+- /fr disable   : disables FastReset
+- /fr reset     : reset instance
+- /fr ulti      : teleport to the predefined ulti-house
+- /fr leader    : ports to your leader
+- /fr leave     : exit the current instance
+
+
+
 If you can do a little translation work for me, let me know. Currently the addon is only translated to english and german
