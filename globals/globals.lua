@@ -2,14 +2,8 @@ FastReset = FastReset or {}
 FastReset.name = "FastReset"
 FastReset.color = "8B0000"
 FastReset.credits = "@m00nyONE"
-FastReset.version = "1.10.0"
+FastReset.version = "2.0.1"
 FastReset.variableVersion = 1
-FastReset.TrialZoneID = -1
-FastReset.maxDeathCount = 1
-FastReset.defaultUltiHouse = {
-    playerName = "@No4Sniper2k3",
-    id = 46
-}
 FastReset.defaultVariables = {
     enabled = false,
     verboseModeEnabled = true,
@@ -25,7 +19,14 @@ FastReset.defaultVariables = {
         id = 0
     }
 }
-FastReset.TrialInfo = {
+FastReset.defaultUltiHouse = {
+    playerName = "@No4Sniper2k3",
+    id = 46
+}
+FastReset.TrialZoneID = -1
+FastReset.global = FastReset.global or {}
+FastReset.global.shareInterval = 10000
+FastReset.global.TrialInfo = {
     [636] = {nodeIndex = 230, shortName = "HRC"},
     [638] = {nodeIndex = 231, shortName = "AA"},
     [639] = {nodeIndex = 232, shortName = "SO"},
@@ -37,8 +38,14 @@ FastReset.TrialInfo = {
     [1196] = {nodeIndex = 434, shortName = "KA"},
     [1263] = {nodeIndex = 468, shortName = "RG"},
 }
+
 --[[
-FastReset.DungeonInfo = {
+FastReset.global.ArenaInfo = {
+
+}
+]]--
+--[[
+FastReset.global.DungeonInfo = {
     [11] = {nodeIndex = 184, shortName = "VoM"},
     [22] = {nodeIndex = 196, shortName = "VF"},
     [31] = {nodeIndex = 185, shortName = "SW"},
@@ -94,23 +101,3 @@ FastReset.DungeonInfo = {
     [1302] = {nodeIndex = 498, shortName = "SR"},
 }
 ]]--
-
-function FastReset.debug(str)
-    if FastReset.savedVariables.verboseModeEnabled then
-        d("|c" .. FastReset.color .. "FastReset: " .. str .. "|r")
-    end
-end
-
-function FastReset.getHouseNameById(id)
-    if id == 0 then return GetString(FASTRESET_ERROR_ZONEISNOTHOME) end
-    local h = GetCollectibleName(GetCollectibleIdForHouse(id))
-    return FastReset.filterName(h)
-end
-
-function FastReset.filterName(unfiltered)
-    local i, j = string.find(unfiltered, "%^")
-    if i == nil then
-        return unfiltered
-    end
-    return string.sub(unfiltered, 1, i-1)
-end

@@ -1,3 +1,18 @@
+## 2.0.1
+- complete rework of the whole FastReset System to be more reliable & failproof when ESO crashes on people
+- introduce map ping sharing via LibDataShare
+- death setting now synchronise to other players
+
+## 1.12.0
+- fix a bug introduced in 1.11.0
+- leading the way to sync stuff ;-)
+- code:
+  - refactoring
+  - function outsorcing
+
+## 1.11.0
+- fixed an oversight that when you abort auto exiting the instance it will try to port you into the ultihouse anyway
+
 ## 1.10.0
 - death detection settings are now not experimental anymore - YOU STILL HAVE TO SET THEM ON EVERY GROUPMEMBER IF YOU PLAN TO USE THEM!!!! - syncing maybe in the future
 - new commands added 

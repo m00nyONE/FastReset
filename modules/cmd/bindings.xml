@@ -5,13 +5,13 @@
                 <Down>FastReset.toggle()</Down>
             </Action>
             <Action name="FASTRESET_HOTKEY_AUTOMATION">
-                <Down>FastReset.TrialZone = GetUnitZone("player") FastReset.autoLeaveInstance()</Down>
+                <Down>FastReset.TrialZone = GetUnitZone("player") FastReset.AutoLeaveInstance()</Down>
             </Action>
             <Action name="FASTRESET_HOTKEY_RESET">
-                <Down>FastReset.ResetInstance()</Down>
+                <Down>FastReset.Leader.ResetInstance()()</Down>
             </Action>
             <Action name="FASTRESET_HOTKEY_ULTIHOME">
-                <Down>FastReset.PortToUltiHouse()</Down>
+                <Down>FastReset.Shared.PortToUltiHouse()</Down>
             </Action>
             <Action name="FASTRESET_HOTKEY_PORTTOLEADER">
                 <Down>JumpToGroupLeader()</Down>

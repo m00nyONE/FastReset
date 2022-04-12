@@ -2,6 +2,9 @@ FastReset = FastReset or {}
 
 function FastReset.OnAddOnLoaded(event, addonName)
     if addonName == FastReset.name then
+        local startupTimer = FastReset.util.Timer:New()
+        startupTimer:Start()
+
         EVENT_MANAGER:UnregisterForEvent(FastReset.name, EVENT_ADD_ON_LOADED)
 
         -- load saved variables ( global )
@@ -12,14 +15,18 @@ function FastReset.OnAddOnLoaded(event, addonName)
             FastReset.savedVariables.ultiHouse = FastReset.defaultUltiHouse
         end
 
+        FastReset.cmd.createSlashCommands()
         -- create the LibAddonMenu entry
-        FastReset.createAddonMenu()
+        FastReset.menu.createAddonMenu()
 
         -- start event listener when fastreset is enabled
         if FastReset.savedVariables.enabled then
             FastReset.enable()
             zo_callLater(function() FastReset.debug(GetString(FASTRESET_ENABLED)) end, 6000)
         end
+
+        startupTimer:Stop()
+        startupTimer:AddToLoadTime()
     end
 end
 

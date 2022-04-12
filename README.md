@@ -2,7 +2,7 @@
 
 ## This addon is made for players who want to complete trifectas in trials with their groups.
 
-### Are you tierd of resetting the instance all the time? Port out, port back in? Then someone forgets to refill his ultimate & the first trash starts without a horn or collos? Me to! All the time wasted between the tries because there is ALWAYS someone who f*cks it up.
+### Are you tired of resetting the instance all the time? Port out, port back in? Then someone forgets to refill his ultimate & the first trash starts without a horn or collos? Me to! All the time wasted between the tries because there is ALWAYS someone who f*cks it up.
 
 ### Then maybe this addon is for you and your group. It should be used by all members to be most effective.
 

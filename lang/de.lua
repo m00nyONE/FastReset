@@ -52,7 +52,7 @@ local strings = {
 
     FASTRESET_MENU_SECTION_DEATHDETECTION = "Todeserkennung",
     FASTRESET_MENU_SECTION_DEATHDETECTION_TOOLTIP = "Einstellungen für die automatische Todeserkennung",
-    FASTRESET_MENU_SECTION_DEATHDETECTION_DESCRIPTION = "ACHTUNG! - Diese Einstellungen müssen bei ALLEN Spielern gleich sein! - Sie setzen sich automatisch nach jedem reload oder logout zurück!",
+    FASTRESET_MENU_SECTION_DEATHDETECTION_DESCRIPTION = "ACHTUNG! - Diese Einstellungen wird vom Leader getätigt!",
     FASTRESET_MENU_SECTION_DEATHDETECTION_SLIDER_DEATHCOUNT_TEXT = "Todesanzahl",
     FASTRESET_MENU_SECTION_DEATHDETECTION_SLIDER_DEATHCOUNT_TOOLTIP = "Setzt die Anzahl der Tode die spieler sterben dürfen bevor FastReset seine Automaisierung ausführt",
 

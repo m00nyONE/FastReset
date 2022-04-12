@@ -52,7 +52,7 @@ local strings = {
 
     FASTRESET_MENU_SECTION_DEATHDETECTION = "death detection",
     FASTRESET_MENU_SECTION_DEATHDETECTION_TOOLTIP = "settings for the death detection",
-    FASTRESET_MENU_SECTION_DEATHDETECTION_DESCRIPTION = "WARNING! - These Settings need to be the same on ALL groupmembers! - these values will reset on every reload or logout",
+    FASTRESET_MENU_SECTION_DEATHDETECTION_DESCRIPTION = "WARNING! - This settings only need to be done by the raidlead . FastReset uses MapPings to share data to the group Members",
     FASTRESET_MENU_SECTION_DEATHDETECTION_SLIDER_DEATHCOUNT_TEXT = "deathcount",
     FASTRESET_MENU_SECTION_DEATHDETECTION_SLIDER_DEATHCOUNT_TOOLTIP = "set the amount of deaths that are needed for FastReset to trigger its automation.",
 
