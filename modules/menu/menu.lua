@@ -35,7 +35,7 @@ function FastReset.menu.createAddonMenu()
             name = GetString(FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_ENABLE_TITLE),
             tooltip = GetString(FASTRESET_SECTION_GENERAL_MENU_CHECKBOX_ENABLE_TOOLTIP),
             getFunc = function() return FastReset.savedVariables.enabled end,
-            setFunc = function(value) FastReset.toggle() end,
+            setFunc = function() FastReset.toggle() end,
             width = "full",
             default = true,
         },
@@ -77,7 +77,7 @@ function FastReset.menu.createAddonMenu()
                     name = GetString(FASTRESET_MENU_SECTION_ULTIMATEAUTOMATION_CHECKBOX_PORTTOULTIHOUSE_TITLE),
                     tooltip = GetString(FASTRESET_MENU_SECTION_ULTIMATEAUTOMATION_CHECKBOX_PORTTOULTIHOUSE_TOOLTIP),
                     getFunc = function() return FastReset.savedVariables.autoPortToUltiHouseEnabled end,
-                    setFunc = function(value) FastReset.savedVariables.autoPortToUltiHouseEnabled = not FastReset.savedVariables.autoPortToUltiHouseEnabled end,
+                    setFunc = function() FastReset.savedVariables.autoPortToUltiHouseEnabled = not FastReset.savedVariables.autoPortToUltiHouseEnabled end,
                     width = "full",
                     disabled = function()
                         if FastReset.savedVariables.ultiHouse.playerName == nil or FastReset.savedVariables.ultiHouse.playerName == "" then return true end
@@ -91,7 +91,7 @@ function FastReset.menu.createAddonMenu()
                     name = GetString(FASTRESET_MENU_SECTION_ULTIMATEAUTOMATION_CHECKBOX_PORTTOULTIHOUSEWHENNOT500_TITLE),
                     tooltip = GetString(FASTRESET_MENU_SECTION_ULTIMATEAUTOMATION_CHECKBOX_PORTTOULTIHOUSEWHENNOT500_TOOLTIP),
                     getFunc = function() return FastReset.savedVariables.autoPortToUltiHouseWithMaxUltimate end,
-                    setFunc = function(value) FastReset.savedVariables.autoPortToUltiHouseWithMaxUltimate = not FastReset.savedVariables.autoPortToUltiHouseWithMaxUltimate end,
+                    setFunc = function() FastReset.savedVariables.autoPortToUltiHouseWithMaxUltimate = not FastReset.savedVariables.autoPortToUltiHouseWithMaxUltimate end,
                     width = "full",
                     disabled = function()
                         if FastReset.savedVariables.autoPortToUltiHouseEnabled then return false end
@@ -165,6 +165,15 @@ function FastReset.menu.createAddonMenu()
                     width = "full"
                 },
                 [2] = {
+                    type = "checkbox",
+                    name = GetString(FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_CONFIRMEXIT_TEXT),
+                    tooltip = GetString(FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_CONFIRMEXIT_TOOLTIP),
+                    width = "full",
+                    default = false,
+                    getFunc = function() return FastReset.savedVariables.confirmExit end,
+                    setFunc = function() FastReset.savedVariables.confirmExit = not FastReset.savedVariables.confirmExit end,
+                },
+                [3] = {
                     type = "slider",
                     name = GetString(FASTRESET_MENU_SECTION_DEATHDETECTION_SLIDER_DEATHCOUNT_TEXT),
                     getFunc = function() return FastReset.Share.MAXDEATHCOUNT.VALUE end,

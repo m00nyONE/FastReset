@@ -23,18 +23,28 @@ function FastReset.Member.PortBack()
     EVENT_MANAGER:RegisterForUpdate(FastReset.name .. "LeaderInTrial", 100, checkForPortInRecieved)
 end
 
-function FastReset.Member.KickRecieved()
-    -- check if player is really in an instance
-    if not CanExitInstanceImmediately() then FastReset.debug(GetString(FASTRESET_ERROR_NOTININSTANCE)) return end
-
-    FastReset.TrialZoneID = GetZoneId(GetUnitZoneIndex("player"))
-
-    -- start listener 
+local function exitAndPrepare()
+    -- start listener
     EVENT_MANAGER:RegisterForEvent(FastReset.name .. "KickRecieved", EVENT_PLAYER_ACTIVATED, function()
         EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "KickRecieved", EVENT_PLAYER_ACTIVATED)
         FastReset.Shared.PrepareForNextTrial()
     end)
     --Kick player out of the instance
     ExitInstanceImmediately()
+end
 
+function FastReset.Member.KickRecieved()
+    -- check if player is really in an instance
+    if not CanExitInstanceImmediately() then FastReset.debug(GetString(FASTRESET_ERROR_NOTININSTANCE)) return end
+
+    FastReset.TrialZoneID = GetZoneId(GetUnitZoneIndex("player"))
+
+    if FastReset.savedVariables.confirmExit then
+        LibAddonMenu2.util.ShowConfirmationDialog(
+                GetString(FASTRESET_DIALOG_EXIT_INSTANCE_TITLE),
+                GetString(FASTRESET_DIALOG_EXIT_INSTANCE_TEXT),
+                exitAndPrepare)
+    else
+        exitAndPrepare()
+    end
 end

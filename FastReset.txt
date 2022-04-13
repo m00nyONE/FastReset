@@ -12,6 +12,7 @@
 ## AddOnVersion: 020001
 ## SavedVariables: FastResetVars
 ## DependsOn: LibAddonMenu-2.0 LibSlashCommander LibDataShare
+## OptionalDependsOn: HodorReflexes
 
 lang/en.lua
 lang/$(language).lua

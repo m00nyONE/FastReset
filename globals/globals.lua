@@ -13,6 +13,7 @@ FastReset.defaultVariables = {
     autoPortToUltiHouseDelay = 1000,
     autoPortToUltiHouseEnabled = false,
     autoPortToUltiHouseWithMaxUltimate = false,
+    confirmExit = false,
     maxDeathCount = 1,
     ultiHouse = {
         playerName = "",

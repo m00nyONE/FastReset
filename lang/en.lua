@@ -52,9 +52,11 @@ local strings = {
 
     FASTRESET_MENU_SECTION_DEATHDETECTION = "death detection",
     FASTRESET_MENU_SECTION_DEATHDETECTION_TOOLTIP = "settings for the death detection",
-    FASTRESET_MENU_SECTION_DEATHDETECTION_DESCRIPTION = "WARNING! - This settings only need to be done by the raidlead . FastReset uses MapPings to share data to the group Members",
+    FASTRESET_MENU_SECTION_DEATHDETECTION_DESCRIPTION = "WARNING! - This setting is set by the raidlead. FastReset uses MapPings to share data to the group Members",
     FASTRESET_MENU_SECTION_DEATHDETECTION_SLIDER_DEATHCOUNT_TEXT = "deathcount",
     FASTRESET_MENU_SECTION_DEATHDETECTION_SLIDER_DEATHCOUNT_TOOLTIP = "set the amount of deaths that are needed for FastReset to trigger its automation.",
+    FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_CONFIRMEXIT_TEXT = "confirm exit",
+    FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_CONFIRMEXIT_TOOLTIP = "Shows you a confirmationbox when the raidlead kicks you out of the trial",
 
     FASTRESET_SLASHCOMMAND_DESCRIPTION = "manually trigger FastReset",
     FASTRESET_SLASHCOMMAND_ENABLE_DESCRIPTION = "enables FastReset",

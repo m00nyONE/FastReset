@@ -52,9 +52,11 @@ local strings = {
 
     FASTRESET_MENU_SECTION_DEATHDETECTION = "Todeserkennung",
     FASTRESET_MENU_SECTION_DEATHDETECTION_TOOLTIP = "Einstellungen für die automatische Todeserkennung",
-    FASTRESET_MENU_SECTION_DEATHDETECTION_DESCRIPTION = "ACHTUNG! - Diese Einstellungen wird vom Leader getätigt!",
+    FASTRESET_MENU_SECTION_DEATHDETECTION_DESCRIPTION = "ACHTUNG! - Diese Einstellung wird vom Leader getätigt!",
     FASTRESET_MENU_SECTION_DEATHDETECTION_SLIDER_DEATHCOUNT_TEXT = "Todesanzahl",
     FASTRESET_MENU_SECTION_DEATHDETECTION_SLIDER_DEATHCOUNT_TOOLTIP = "Setzt die Anzahl der Tode die spieler sterben dürfen bevor FastReset seine Automaisierung ausführt",
+    FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_CONFIRMEXIT_TEXT = "Verlassen bestätigen",
+    FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_CONFIRMEXIT_TOOLTIP = "Zeigt dir vor dem Kick durch den RaidLead einen Bestätigungsdialog an",
 
     FASTRESET_SLASHCOMMAND_DESCRIPTION = "startet FastReset manuell",
     FASTRESET_SLASHCOMMAND_ENABLE_DESCRIPTION = "aktiviert FastReset",
