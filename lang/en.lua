@@ -57,6 +57,9 @@ local strings = {
     FASTRESET_MENU_SECTION_DEATHDETECTION_SLIDER_DEATHCOUNT_TOOLTIP = "set the amount of deaths that are needed for FastReset to trigger its automation.",
     FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_CONFIRMEXIT_TEXT = "confirm exit",
     FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_CONFIRMEXIT_TOOLTIP = "Shows you a confirmationbox when the raidlead kicks you out of the trial",
+    FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_HODOREJECT_TEXT = "additional Hodor-Eject",
+    FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_HODOREJECT_TOOLTIP = "additionally to FastReset-Eject send a Hodor-Eject to kick members out of the instance who do not have FastReset installed",
+    FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_HODOREJECT_WARNING = "EXPERIMENTAL: sending too many pings at once may lead to a kick",
 
     FASTRESET_SLASHCOMMAND_DESCRIPTION = "manually trigger FastReset",
     FASTRESET_SLASHCOMMAND_ENABLE_DESCRIPTION = "enables FastReset",

@@ -14,6 +14,7 @@ FastReset.defaultVariables = {
     autoPortToUltiHouseEnabled = false,
     autoPortToUltiHouseWithMaxUltimate = false,
     confirmExit = false,
+    sendAdditionalHodorEject = false,
     maxDeathCount = 1,
     ultiHouse = {
         playerName = "",

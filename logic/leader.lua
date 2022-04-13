@@ -50,6 +50,13 @@ local function KickPlayersAndLeave()
 
             FastReset.Share.EXITINSTANCE.VALUE = 0
 
+            -- send additional hodor eject
+            if FastReset.savedVariables.sendAdditionalHodorEject then
+                if HodorReflexes then
+                    HodorReflexes.modules.share.SendCustomData(22, true)
+                end
+            end
+
             -- start listener
             EVENT_MANAGER:RegisterForEvent(FastReset.name .. "KickRecieved", EVENT_PLAYER_ACTIVATED, function()
                 EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "KickRecieved", EVENT_PLAYER_ACTIVATED)
