@@ -135,8 +135,8 @@ local function detectDeath(_, unitTag, isDead)
             -- disbale death detection
             EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "DeathDetection", EVENT_UNIT_DEATH_STATE_CHANGED)
             FastReset.TrialZoneID = GetZoneId(GetUnitZoneIndex("player"))
-            -- reset deathCounter to -1000 to ensure the exit will not trigger again after the next death even when the leader decides to not kick the members
-            FastReset.Share.DEATHCOUNT.VALUE = -1000
+            -- reset deathCounter to 0
+            FastReset.Share.DEATHCOUNT.VALUE = 0
 
             -- reset the instance after next loading zone
             FastReset.Leader.AutoResetInstance()
