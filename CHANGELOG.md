@@ -1,3 +1,12 @@
+## 2.3.0
+- adding speedy mode
+
+## 2.2.0
+- adding additional hodor eject feature for players who do not have fastreset enabled
+
+## 2.1.0
+- adding optional except button when getting an exit command from the leader
+
 ## 2.0.1
 - complete rework of the whole FastReset System to be more reliable & failproof when ESO crashes on people
 - introduce map ping sharing via LibDataShare
