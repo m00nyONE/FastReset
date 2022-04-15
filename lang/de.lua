@@ -30,7 +30,9 @@ local strings = {
     FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_ENABLE_TOOLTIP = "aktiviert/deaktiviert FastReset",
     FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_VERBOSEMODE_TITLE = "Info Modus",
     FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_VERBOSEMODE_TOOLTIP = "aktiviert/deaktiviert den Info Modus",
-
+    FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_SPEEDYMODE_TITLE = "Sofort Modus",
+    FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_SPEEDYMODE_TOOLTIP = "aktiviert/deaktiviert den sofort modus. Es wird nicht auf den Gruppenleiter gewartet um zurück in die Instanz zu teleportieren. Stattdessen wirst du sofort teleportiert.",
+    FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_SPEEDYMODE_WARNING = "Wenn der Gruppenleiter lange Ladezeiten hat, kann es passieren, dass du dich bereits zurück teleportierst obwohl die Instanz noch nicht vollständig zurückgesetzt wurde. Dies kann zu Zeitverlust führen. Es kostet außerdem Gold.",
     FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_EXPERIMENTAL_TITLE = "experimentelle Optionen",
     FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_EXPERIMENTAL_TOOLTIP = "aktiviert/deaktiviert experimentelle Optionen",
 

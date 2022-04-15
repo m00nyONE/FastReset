@@ -22,10 +22,7 @@ function FastReset.Leader.PortBack()
         return
     end
 
-    local nodeIndex = FastReset.global.TrialInfo[FastReset.TrialZoneID].nodeIndex
-    local _, name = GetFastTravelNodeInfo(nodeIndex)
-
-    ZO_Dialogs_ShowPlatformDialog("RECALL_CONFIRM", {nodeIndex = nodeIndex}, {mainTextParams = {FastReset.util.filterName(name)}})
+    FastReset.Shared.FastTravelBackToTrial()
     --FastReset.TrialZoneID = -1
 
     EVENT_MANAGER:RegisterForEvent(FastReset.name .. "InNewTrial", EVENT_PLAYER_ACTIVATED, function()

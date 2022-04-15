@@ -35,6 +35,13 @@ function FastReset.Shared.PortToUltiHouse()
     end
 end
 
+function FastReset.Shared.FastTravelBackToTrial()
+    local nodeIndex = FastReset.global.TrialInfo[FastReset.TrialZoneID].nodeIndex
+    local _, name = GetFastTravelNodeInfo(nodeIndex)
+
+    ZO_Dialogs_ShowPlatformDialog("RECALL_CONFIRM", {nodeIndex = nodeIndex}, {mainTextParams = {FastReset.util.filterName(name)}})
+end
+
 local function startUltiCheck()
     EVENT_MANAGER:RegisterForUpdate(FastReset.name .. "UltiRecharge", 100, function()
         local current, maximum = GetUnitPower("player", POWERTYPE_ULTIMATE)

@@ -48,6 +48,16 @@ function FastReset.menu.createAddonMenu()
             width = "full",
             default = true,
         },
+        [5] = {
+            type = "checkbox",
+            name = GetString(FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_SPEEDYMODE_TITLE),
+            tooltip = GetString(FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_SPEEDYMODE_TOOLTIP),
+            warning = GetString(FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_SPEEDYMODE_WARNING),
+            getFunc = function() return FastReset.savedVariables.speedyMode end,
+            setFunc = function(value) FastReset.savedVariables.speedyMode = value end,
+            width = "full",
+            default = false,
+        },
         --[[
                 [5] = {
                     type = "checkbox",
@@ -59,7 +69,7 @@ function FastReset.menu.createAddonMenu()
                     default = false,
                 },
         ]]--
-        [5] = {
+        [6] = {
             type = "submenu",
             name = GetString(FASTRESET_MENU_SECTION_ULTIMATEAUTOMATION),
             tooltip = GetString(FASTRESET_MENU_SECTION_ULTIMATEAUTOMATION_TOOLTIP),
@@ -154,7 +164,7 @@ function FastReset.menu.createAddonMenu()
                 }
             },
         },
-        [6] = {
+        [7] = {
             type = "submenu",
             name = GetString(FASTRESET_MENU_SECTION_DEATHDETECTION),
             tooltip = GetString(FASTRESET_MENU_SECTION_DEATHDETECTION_TOOLTIP),

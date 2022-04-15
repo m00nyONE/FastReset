@@ -7,8 +7,7 @@ FastReset.variableVersion = 1
 FastReset.defaultVariables = {
     enabled = false,
     verboseModeEnabled = true,
-    confirmLeaveInstance = true,
-    enableExperimentalFeatures = false,
+    speedyMode = false,
     autoResetDelay = 250,
     autoPortToUltiHouseDelay = 1000,
     autoPortToUltiHouseEnabled = false,
@@ -19,7 +18,8 @@ FastReset.defaultVariables = {
     ultiHouse = {
         playerName = "",
         id = 0
-    }
+    },
+    enableExperimentalFeatures = false,
 }
 FastReset.defaultUltiHouse = {
     playerName = "@No4Sniper2k3",

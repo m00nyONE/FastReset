@@ -30,7 +30,9 @@ local strings = {
     FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_ENABLE_TOOLTIP = "enables/disables FastReset",
     FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_VERBOSEMODE_TITLE = "verbose mode",
     FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_VERBOSEMODE_TOOLTIP = "enables/disables verbose mode",
-
+    FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_SPEEDYMODE_TITLE = "instant mode",
+    FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_SPEEDYMODE_TOOLTIP = "enables/disables instant mode. It skips waiting for the leader to port back into the trial and instead directly ports you in",
+    FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_SPEEDYMODE_WARNING = "if the leader has slow loading times, it can happen that you port in before the instance is fully resetted. This can result in timeloss. It also costs Gold.",
     FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_EXPERIMENTAL_TITLE = "experimental options",
     FASTRESET_MENU_SECTION_GENERAL_CHECKBOX_EXPERIMENTAL_TOOLTIP = "enables/disables experimental options",
 

@@ -10,6 +10,11 @@ local function checkForPortInRecieved()
         return
     end
 
+    if FastReset.savedVariables.speedyMode then
+        FastReset.Shared.FastTravelBackToTrial()
+        return
+    end
+
     if FastReset.Share.INNEWTRIAL.VALUE == 0 then return end
 
     EVENT_MANAGER:UnregisterForUpdate(FastReset.name .. "LeaderInTrial")
