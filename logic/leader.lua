@@ -108,23 +108,41 @@ local function detectDeath(_, unitTag, isDead)
     -- increase death counter
     FastReset.Share.DEATHCOUNT.VALUE = FastReset.Share.DEATHCOUNT.VALUE + 1
 
+    -- print in chat who died
     FastReset.debug(GetUnitDisplayName(unitTag) .. " " .. GetString(FASTRESET_DEATHDETECTED))
 
     -- set the TrialZone again - just to be safe
     -- FastReset.TrialZoneID = GetZoneId(GetUnitZoneIndex("player"))
 
+    -- set the currentBossHealth variable to 100
+    -- this is to ensure that even when there is no bossfight or when the NoResetOnBossPercentageLowerThan is not set that the death counter continues to work
+    local currentBossPercentage = 100
+
+    -- check if a boss is there
+    if GetUnitName("boss1") ~= "" then
+        -- check if the percentage option is set - if 0 then its not
+        if FastReset.NoResetOnBossPercentageLowerThan then
+            -- calculate boss health in %
+            local bossHealth, maxBossHealth = GetUnitPower("boss1", POWERTYPE_HEALTH)
+            currentBossPercentage = maxBossHealth/bossHealth
+        end
+    end
+
     -- check the amount of deaths
     if FastReset.Share.DEATHCOUNT.VALUE >= FastReset.Share.MAXDEATHCOUNT.VALUE then
-        -- disbale death detection
-        EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "DeathDetection", EVENT_UNIT_DEATH_STATE_CHANGED)
-        FastReset.TrialZoneID = GetZoneId(GetUnitZoneIndex("player"))
-        -- reset deathCounter to 0
-        FastReset.Share.DEATHCOUNT.VALUE = 0
-        -- print in chat who died
+        --check if the set percentage is reached
+        if FastReset.NoResetOnBossPercentageLowerThan > currentBossPercentage then
+            -- disbale death detection
+            EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "DeathDetection", EVENT_UNIT_DEATH_STATE_CHANGED)
+            FastReset.TrialZoneID = GetZoneId(GetUnitZoneIndex("player"))
+            -- reset deathCounter to -1000 to ensure the exit will not trigger again after the next death even when the leader decides to not kick the members
+            FastReset.Share.DEATHCOUNT.VALUE = -1000
 
-
-        FastReset.Leader.AutoResetInstance()
-        KickPlayersAndLeave()
+            -- reset the instance after next loading zone
+            FastReset.Leader.AutoResetInstance()
+            -- kick members and leave the instance
+            KickPlayersAndLeave()
+        end
     end
 end
 

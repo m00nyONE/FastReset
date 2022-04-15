@@ -26,6 +26,7 @@ FastReset.defaultUltiHouse = {
     id = 46
 }
 FastReset.TrialZoneID = -1
+FastReset.NoResetOnBossPercentageLowerThan = 0
 FastReset.global = FastReset.global or {}
 FastReset.global.shareInterval = 10000
 FastReset.global.TrialInfo = {

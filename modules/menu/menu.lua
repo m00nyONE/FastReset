@@ -178,6 +178,19 @@ function FastReset.menu.createAddonMenu()
                     disabled = function() return not IsUnitGroupLeader("player") end
                 },
                 [3] = {
+                    type = "slider",
+                    name = GetString(FASTRESET_MENU_SECTION_DEATHDETECTION_SLIDER_BOSSPERCENTAGE_TEXT),
+                    getFunc = function() return FastReset.NoResetOnBossPercentageLowerThan end,
+                    setFunc = function(value) FastReset.NoResetOnBossPercentageLowerThan = value end,
+                    tooltip = GetString(FASTRESET_MENU_SECTION_DEATHDETECTION_SLIDER_BOSSPERCENTAGE_TOOLTIP),
+                    decimals = 0,
+                    step = 1,
+                    default = 0,
+                    min = 1,
+                    max = 100,
+                    disabled = function() return not IsUnitGroupLeader("player") end
+                },
+                [4] = {
                     type = "checkbox",
                     name = GetString(FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_CONFIRMEXIT_TEXT),
                     tooltip = GetString(FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_CONFIRMEXIT_TOOLTIP),
@@ -186,7 +199,7 @@ function FastReset.menu.createAddonMenu()
                     getFunc = function() return FastReset.savedVariables.confirmExit end,
                     setFunc = function() FastReset.savedVariables.confirmExit = not FastReset.savedVariables.confirmExit end,
                 },
-                [4] = {
+                [5] = {
                     type = "checkbox",
                     name = GetString(FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_HODOREJECT_TEXT),
                     tooltip = GetString(FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_HODOREJECT_TOOLTIP),
