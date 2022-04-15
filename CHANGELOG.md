@@ -16,17 +16,17 @@
 - fix a bug introduced in 1.11.0
 - leading the way to sync stuff ;-)
 - code:
-  - refactoring
-  - function outsorcing
+    - refactoring
+    - function outsorcing
 
 ## 1.11.0
 - fixed an oversight that when you abort auto exiting the instance it will try to port you into the ultihouse anyway
 
 ## 1.10.0
 - death detection settings are now not experimental anymore - YOU STILL HAVE TO SET THEM ON EVERY GROUPMEMBER IF YOU PLAN TO USE THEM!!!! - syncing maybe in the future
-- new commands added 
-    /fr set ulti
-    /fr set deaths x
+- new commands added
+  /fr set ulti
+  /fr set deaths x
 - cleanup & some translation fixes
 
 ## 1.9.2
@@ -37,7 +37,7 @@
 
 ## 1.9.0
 - new feature:
-    the leader now gets a promt to directly port back to the trial after reset
+  the leader now gets a promt to directly port back to the trial after reset
 - adding LibSlashCommander as a required dependency & remove legacy code
 - code refactor and partially rewrite
 - change ZoneIndex to ZoneID for more stability in the future ( Indexes change very update, IDs do not )
