@@ -1,3 +1,7 @@
+## 2.3.1
+- fix an issue with /fr that the group did not get kicked out. 
+  now if you have the hodor eject enabled - it will be fired
+
 ## 2.3.0
 - adding speedy mode
 
