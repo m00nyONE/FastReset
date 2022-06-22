@@ -4,12 +4,12 @@
 ; States and/or other countries. All rights reserved.
 ; You can read the full terms at https://account.elderscrollsonline.com/add-on-terms
 
-## APIVersion: 101032 101031
+## APIVersion: 101035 101034
 ## Title: FastReset
 ## Description: Reset instances faster
 ## Author: m00nyONE
-## Version: 2.3.1
-## AddOnVersion: 020301
+## Version: 2.4.0
+## AddOnVersion: 020400
 ## SavedVariables: FastResetVars
 ## DependsOn: LibAddonMenu-2.0 LibSlashCommander LibDataShare
 ## OptionalDependsOn: HodorReflexes

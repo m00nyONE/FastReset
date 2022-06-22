@@ -32,7 +32,8 @@ local function exitAndPrepare()
     -- start listener
     EVENT_MANAGER:RegisterForEvent(FastReset.name .. "KickRecieved", EVENT_PLAYER_ACTIVATED, function()
         EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "KickRecieved", EVENT_PLAYER_ACTIVATED)
-        FastReset.Shared.PrepareForNextTrial()
+        -- call FastReset.Shared.PrepareForNextTrial() 1000ms later to ensure ESO has loaded all API function regarding skillcosts & ultimatepoints
+        zo_callLater(FastReset.Shared.PrepareForNextTrial, 1000)
     end)
     --Kick player out of the instance
     ExitInstanceImmediately()

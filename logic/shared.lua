@@ -159,6 +159,12 @@ local function leaderUpdate(_, leaderTag)
     FastReset.Leader.StartSharingData()
 end
 
+local function groupMemberLeftUpdate()
+    if not IsUnitGrouped("player") then
+        FastReset.disable()
+    end
+end
+
 -- enable fastreset listener
 function FastReset.enable()
     EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "RaidStarted", EVENT_RAID_TRIAL_STARTED)
@@ -166,6 +172,7 @@ function FastReset.enable()
 
     EVENT_MANAGER:RegisterForEvent(FastReset.name .. "RaidStarted", EVENT_RAID_TRIAL_STARTED, onTrialStart)
     EVENT_MANAGER:RegisterForEvent(FastReset.name .. "LeaderUpdate", EVENT_LEADER_UPDATE, leaderUpdate)
+    EVENT_MANAGER:RegisterForEvent(FastReset.name .. "GroupUpdate", EVENT_GROUP_MEMBER_LEFT, groupMemberLeftUpdate)
 
     FastReset.Share:Register()
     FastReset.savedVariables.enabled = true
@@ -176,6 +183,7 @@ end
 function FastReset.disable()
     EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "RaidStarted", EVENT_RAID_TRIAL_STARTED)
     EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "LeaderUpdate", EVENT_LEADER_UPDATE)
+    EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "GroupUpdate", EVENT_GROUP_UPDATE)
     FastReset.Shared.DisableAllListeners()
     FastReset.Leader.StopSharingData()
 

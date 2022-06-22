@@ -1,3 +1,11 @@
+## 2.4.0
+- adding auto disable FastReset after disbanding group to assist player constantly forgetting to disable FastReset & accidentally resetting other instances instead
+
+## 2.3.2
+- Fix always getting ulti refill option even if ulti is full by adding a small delay for the check
+- Fix FastReset Eject not being prioritized over HodorEject if enabled ( thank you Andy, you messed it up t(^^t) ... ;-) ) by adding a delay for the pings to fire
+- Fix wrong decoding of numbers resulting in crazy functionality bugs & false port backs
+
 ## 2.3.1
 - fix an issue with /fr that the group did not get kicked out. 
   now if you have the hodor eject enabled - it will be fired

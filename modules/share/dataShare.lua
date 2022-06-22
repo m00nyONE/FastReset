@@ -29,9 +29,11 @@ FastReset.Share = {
 
 
 local function rshift(data, by)
+    --FastReset.debug("shift right: " .. data .. " by " .. 2^by .. " - got: " .. zo_floor(data / (2^by)))
     return zo_floor(data / (2^by))
 end
 local function lshift(data, by)
+    --FastReset.debug("shift left: " .. data .. " by " .. 2^by .. " - got: " .. (data* (2^by)))
     return (data* (2^by))
 end
 
@@ -50,19 +52,19 @@ local function encodeData(data)
     if type(data) ~= "table" then return nil end
 
     local result = 0
-    result = result + encode(data.MAXDEATHCOUNT, FastReset.Share.MAXDEATHCOUNT.OFFSET)
-    result = result + encode(data.DEATHCOUNT, FastReset.Share.DEATHCOUNT.OFFSET)
-    result = result + encode(data.EXITINSTANCE, FastReset.Share.EXITINSTANCE.OFFSET)
-    result = result + encode(data.INNEWTRIAL, FastReset.Share.INNEWTRIAL.OFFSET)
+    result = result + encode(data.MAXDEATHCOUNT, FastReset.Share.MAXDEATHCOUNT.OFFSET, FastReset.Share.MAXDEATHCOUNT.SIZE)
+    result = result + encode(data.DEATHCOUNT, FastReset.Share.DEATHCOUNT.OFFSET, FastReset.Share.DEATHCOUNT.SIZE)
+    result = result + encode(data.EXITINSTANCE, FastReset.Share.EXITINSTANCE.OFFSET, FastReset.Share.EXITINSTANCE.SIZE)
+    result = result + encode(data.INNEWTRIAL, FastReset.Share.INNEWTRIAL.OFFSET, FastReset.Share.INNEWTRIAL.SIZE)
 
     return result
 end
 local function decodeData(data)
     local result = {}
     result.MAXDEATHCOUNT = decode(data, FastReset.Share.MAXDEATHCOUNT.OFFSET, FastReset.Share.MAXDEATHCOUNT.SIZE)
-    result.DEATHCOUNT = decode(data, FastReset.Share.DEATHCOUNT.OFFSET, FastReset.Share.MAXDEATHCOUNT.SIZE)
-    result.EXITINSTANCE = decode(data, FastReset.Share.EXITINSTANCE.OFFSET, FastReset.Share.MAXDEATHCOUNT.SIZE)
-    result.INNEWTRIAL = decode(data, FastReset.Share.INNEWTRIAL.OFFSET, FastReset.Share.MAXDEATHCOUNT.SIZE)
+    result.DEATHCOUNT = decode(data, FastReset.Share.DEATHCOUNT.OFFSET, FastReset.Share.DEATHCOUNT.SIZE)
+    result.EXITINSTANCE = decode(data, FastReset.Share.EXITINSTANCE.OFFSET, FastReset.Share.EXITINSTANCE.SIZE)
+    result.INNEWTRIAL = decode(data, FastReset.Share.INNEWTRIAL.OFFSET, FastReset.Share.INNEWTRIAL.SIZE)
     return result
 end
 
@@ -75,19 +77,22 @@ function FastReset.Share.dataShareHandler(tag, rawData)
     FastReset.Share.DEATHCOUNT.VALUE = data.DEATHCOUNT
     FastReset.Share.INNEWTRIAL.VALUE = data.INNEWTRIAL
 
-
-    --FastReset.debug("MAXDEATHCOUNT: " .. tostring(data.MAXDEATHCOUNT))
-    --FastReset.debug("DEATHCOUNT: " .. tostring(data.DEATHCOUNT))
-    --FastReset.debug("EXITINSTANCE: " .. tostring(data.EXITINSTANCE))
-    --FastReset.debug("INNEWTRIAL: " .. tostring(data.INNEWTRIAL))
+    --[[
+    FastReset.debug("MAXDEATHCOUNT: " .. tostring(data.MAXDEATHCOUNT))
+    FastReset.debug("DEATHCOUNT: " .. tostring(data.DEATHCOUNT))
+    FastReset.debug("EXITINSTANCE: " .. tostring(data.EXITINSTANCE))
+    FastReset.debug("INNEWTRIAL: " .. tostring(data.INNEWTRIAL))
+    ]]--
 
     if data.EXITINSTANCE == 1 then
         FastReset.Member.KickRecieved()
         --d("recieved exit command")
     end
+    --[[
     if data.INNEWTRIAL == 1 then
         --d("recieved that the leader is in the new trial and we can port to him")
     end
+    ]]--
 end
 
 
@@ -112,9 +117,18 @@ function FastReset.Share:TransmitData(now)
     else
         self.dataShare:SendData(data)
     end
+
+    --[[
+    local sentData = decodeData(data)
+    FastReset.debug("sent data: ")
+    FastReset.debug("MAXDEATHCOUNT: " .. sentData.MAXDEATHCOUNT)
+    FastReset.debug("DEATHCOUNT: " .. sentData.DEATHCOUNT)
+    FastReset.debug("EXITINSTANCE: " .. sentData.EXITINSTANCE)
+    FastReset.debug("INNEWTRIAL: " .. sentData.INNEWTRIAL)
+    ]]--
 end
 
-
+--[[
 local function sendTestData()
     local rawData = {}
     rawData.MAXDEATHCOUNT = math.random( 1, 63)
@@ -132,9 +146,14 @@ local function sendTestData()
 
     FastReset.Share.dataShare:SendData(encoded)
 end
---SLASH_COMMANDS["/frtest"] = function(str)
---    sendTestData()
---end
+SLASH_COMMANDS["/frtest"] = function(str)
+    sendTestData()
+end
+
+SLASH_COMMANDS["/frtest"] = function(str)
+    FastReset.Share:TransmitData(true)
+end
+]]--
 
 function FastReset.Share:Register()
     self.dataShare = LibDataShare:RegisterMap(FastReset.name, self.MapID, self.dataShareHandler)

@@ -47,12 +47,15 @@ local function KickPlayersAndLeave()
 
             FastReset.Share.EXITINSTANCE.VALUE = 0
 
-            -- send additional hodor eject
-            if FastReset.savedVariables.sendAdditionalHodorEject then
-                if HodorReflexes then
-                    HodorReflexes.modules.share.SendCustomData(22, true)
+            -- send hodor eject 500MS later
+            zo_callLater( function()
+                -- send additional hodor eject
+                if FastReset.savedVariables.sendAdditionalHodorEject then
+                    if HodorReflexes then
+                        HodorReflexes.modules.share.SendCustomData(22, true)
+                    end
                 end
-            end
+            end,500)
 
             -- start listener
             EVENT_MANAGER:RegisterForEvent(FastReset.name .. "KickRecieved", EVENT_PLAYER_ACTIVATED, function()
@@ -60,7 +63,10 @@ local function KickPlayersAndLeave()
                 FastReset.Shared.PrepareForNextTrial()
             end)
 
-            ExitInstanceImmediately()
+            -- exit instance after 1 sec to ensure everybody got the map pings
+            zo_callLater(function()
+                ExitInstanceImmediately()
+            end, 1000)
         end)
 end
 
