@@ -1,3 +1,10 @@
+## 2.5.1
+- fix a small translation error that made the addon crash on english locale
+
+## 2.5.0
+- add DSR support ( sorry that i forgot about that in the past )
+- reducing the wait time to port back to the trial by increasing the polling rate of the leaders pings
+
 ## 2.4.0
 - adding auto disable FastReset after disbanding group to assist player constantly forgetting to disable FastReset & accidentally resetting other instances instead
 
@@ -42,7 +49,7 @@
 - cleanup & some translation fixes
 
 ## 1.9.2
-- adding extra safety to the functions by resetting FastReset.TrialZoneID to -1 after finishing automation - also on enable & disable - to avoid wrong teleportation
+- adding extra safety to the functions by resetting FastReset.ZoneID to -1 after finishing automation - also on enable & disable - to avoid wrong teleportation
 
 ## 1.9.1
 - fix l18n stuff

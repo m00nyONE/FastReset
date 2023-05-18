@@ -1,12 +1,12 @@
 FastReset = FastReset or {}
 FastReset.Member = FastReset.Member or {}
 
-local function checkForPortInRecieved()
-    if GetZoneId(GetUnitZoneIndex("player")) == FastReset.TrialZoneID then
+local function checkForPortInReceived()
+    if GetZoneId(GetUnitZoneIndex("player")) == FastReset.ZoneID then
         --FastReset.debug("in same zone as leader. skipping port")
         EVENT_MANAGER:UnregisterForUpdate(FastReset.name .. "LeaderInTrial")
         FastReset.Share.INNEWTRIAL.VALUE = 0
-        FastReset.TrialZoneID = -1
+        FastReset.ZoneID = -1
         return
     end
 
@@ -21,11 +21,11 @@ local function checkForPortInRecieved()
     LibAddonMenu2.util.ShowConfirmationDialog(
         GetString(FASTRESET_DIALOG_PORT_TO_LEADER_TITLE),
         GetString(FASTRESET_DIALOG_PORT_TO_LEADER_TEXT),
-        function() JumpToGroupLeader() FastReset.TrialZoneID = -1 end)
+        function() JumpToGroupLeader() FastReset.ZoneID = -1 end)
 end
 
 function FastReset.Member.PortBack()
-    EVENT_MANAGER:RegisterForUpdate(FastReset.name .. "LeaderInTrial", 100, checkForPortInRecieved)
+    EVENT_MANAGER:RegisterForUpdate(FastReset.name .. "LeaderInTrial", 100, checkForPortInReceived)
 end
 
 local function exitAndPrepare()
@@ -43,7 +43,7 @@ function FastReset.Member.KickRecieved()
     -- check if player is really in an instance
     if not CanExitInstanceImmediately() then FastReset.debug(GetString(FASTRESET_ERROR_NOTININSTANCE)) return end
 
-    FastReset.TrialZoneID = GetZoneId(GetUnitZoneIndex("player"))
+    FastReset.ZoneID = GetZoneId(GetUnitZoneIndex("player"))
 
     if FastReset.savedVariables.confirmExit then
         LibAddonMenu2.util.ShowConfirmationDialog(

@@ -8,8 +8,8 @@
 ## Title: FastReset
 ## Description: Reset instances faster
 ## Author: m00nyONE
-## Version: 2.4.0
-## AddOnVersion: 020400
+## Version: 2.5.1
+## AddOnVersion: 020501
 ## SavedVariables: FastResetVars
 ## DependsOn: LibAddonMenu-2.0 LibSlashCommander LibDataShare
 ## OptionalDependsOn: HodorReflexes

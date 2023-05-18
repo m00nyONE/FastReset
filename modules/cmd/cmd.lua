@@ -85,6 +85,12 @@ function FastReset.cmd.createSlashCommands()
     commands.disable:SetCallback(FastReset.disable)
     commands.disable:SetDescription(GetString(FASTRESET_SLASHCOMMAND_DISABLE_DESCRIPTION))
 
+    commands.portBack = commands.main:RegisterSubCommand()
+    commands.portBack:AddAlias("pb")
+    commands.portBack:AddAlias("portback")
+    commands.portBack:SetCallback(FastReset.portToLastValidZone)
+    commands.portBack:SetDescription(GetString(FASTRESET_SLASHCOMMAND_PORTBACK_DESCRIPTION))
+
     commands.ulti = commands.main:RegisterSubCommand()
     commands.ulti:AddAlias("ulti")
     commands.ulti:SetCallback(FastReset.Shared.PortToUltiHouse)

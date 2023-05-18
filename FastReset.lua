@@ -15,6 +15,11 @@ function FastReset.OnAddOnLoaded(event, addonName)
             FastReset.savedVariables.ultiHouse = FastReset.defaultUltiHouse
         end
 
+        if FastReset.savedVariables.saveLastPosition then
+            -- disable listener & enable listener on the fly
+            FastReset.trackLastZone(true)
+        end
+
         FastReset.cmd.createSlashCommands()
         -- create the LibAddonMenu entry
         FastReset.menu.createAddonMenu()

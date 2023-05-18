@@ -17,17 +17,17 @@ local function inNewTrial()
 end
 
 function FastReset.Leader.PortBack()
-    if FastReset.TrialZoneID == -1 then
+    if FastReset.ZoneID == -1 then
         FastReset.debug(GetString(FASTRESET_ERROR_NO_TRIAL_SET))
         return
     end
 
     FastReset.Shared.FastTravelBackToTrial()
-    --FastReset.TrialZoneID = -1
+    --FastReset.ZoneID = -1
 
     EVENT_MANAGER:RegisterForEvent(FastReset.name .. "InNewTrial", EVENT_PLAYER_ACTIVATED, function()
         -- if not in the trial, let it run until in trial
-        if FastReset.TrialZoneID ~= GetZoneId(GetUnitZoneIndex("player")) then return end
+        if FastReset.ZoneID ~= GetZoneId(GetUnitZoneIndex("player")) then return end
 
         EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "InNewTrial", EVENT_PLAYER_ACTIVATED)
         zo_callLater(inNewTrial, 1000)
@@ -114,13 +114,13 @@ local function detectDeath(_, unitTag, isDead)
     FastReset.debug(GetUnitDisplayName(unitTag) .. " " .. GetString(FASTRESET_DEATHDETECTED))
 
     -- set the TrialZone again - just to be safe
-    -- FastReset.TrialZoneID = GetZoneId(GetUnitZoneIndex("player"))
+    -- FastReset.ZoneID = GetZoneId(GetUnitZoneIndex("player"))
 
     -- check the amount of deaths
     if FastReset.Share.DEATHCOUNT.VALUE >= FastReset.Share.MAXDEATHCOUNT.VALUE then
         -- disbale death detection
         EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "DeathDetection", EVENT_UNIT_DEATH_STATE_CHANGED)
-        FastReset.TrialZoneID = GetZoneId(GetUnitZoneIndex("player"))
+        FastReset.ZoneID = GetZoneId(GetUnitZoneIndex("player"))
         -- reset deathCounter to 0
         FastReset.Share.DEATHCOUNT.VALUE = 0
         -- print in chat who died

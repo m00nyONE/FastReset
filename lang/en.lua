@@ -7,6 +7,8 @@ local strings = {
     FASTRESET_RESETTING_INSTANCE = "resetting instance",
     FASTRESET_ULTIMATE_FULL = "Ultimate is full",
     FASTRESET_ULTIMATE_FULL_SKIP_RECHARGE = "Ultimate is already full, skipping port to ulti house",
+    FASTRESTE_PORTBACK_ENABLED = "portBack tracking activated",
+    FASTRESTE_PORTBACK_DISABLED = "portBack tracking deactivated",
 
     FASTRESET_ERROR_NOT_LEADER = "only the leader can reset the instance",
     FASTRESET_ERROR_NOT_IN_GROUP = "FastReset disabled because you are not in a group",
@@ -70,6 +72,7 @@ local strings = {
     FASTRESET_SLASHCOMMAND_LEADER_DESCRIPTION = "ports you to the group leader",
     FASTRESET_SLASHCOMMAND_LEAVE_DESCRIPTION = "kicks you out of the current instance",
     FASTRESET_SLASHCOMMAND_RESET_DESCRIPTION = "resets the instance",
+    FastReset_SLASHCOMMAND_PORTBACK_DESCRIPTION = "teleport back to the last zone",
     FASTRESET_SLASHCOMMAND_SET_DESCRIPTION = "set values for FastReset",
     FASTRESET_SLASHCOMMAND_SET_ERROR_NOVALUE = "ERROR: no value specified",
     FASTRESET_SLASHCOMMAND_SET_DEATHS_DESCRIPTION = "<amount> - set the allowed amount of deaths before resetting the instance",

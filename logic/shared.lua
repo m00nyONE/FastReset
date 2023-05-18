@@ -2,6 +2,7 @@ FastReset = FastReset or {}
 FastReset.Shared = FastReset.Shared or {}
 FastReset.Shared.needUltiPreperation = false
 
+
 function FastReset.Shared.DisableAllListeners()
     -- TODO: rework to fit new Names etc
     EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "KickRecieved", EVENT_PLAYER_ACTIVATED)
@@ -9,9 +10,48 @@ function FastReset.Shared.DisableAllListeners()
     EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "InNewTrial", EVENT_PLAYER_ACTIVATED)
     EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "AutoResetInstance", EVENT_PLAYER_ACTIVATED)
     EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "RefillUltimate", EVENT_PLAYER_ACTIVATED)
+    EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "setLastZone", EVENT_ZONE_CHANGED)
     EVENT_MANAGER:UnregisterForUpdate(FastReset.name .. "LeaderInTrial")
     EVENT_MANAGER:UnregisterForUpdate(FastReset.name .. "UltiRecharge")
     EVENT_MANAGER:UnregisterForUpdate(FastReset.name .. "ReadyForPortBack")
+end
+
+function FastReset.trackLastZone(bool)
+    if type(bool) ~= "boolean" then return end
+    if bool then
+        -- better safe than sorry ;-)
+        EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "setLastZone", EVENT_ZONE_CHANGED)
+        EVENT_MANAGER:RegisterForEvent(FastReset.name .. "setLastZone", EVENT_ZONE_CHANGED, FastReset.setLastZone)
+        FastReset.debug(FASTRESTE_PORTBACK_ENABLED)
+        return
+    else
+        EVENT_MANAGER:UnregisterForEvent(FastReset.name .. "setLastZone", EVENT_ZONE_CHANGED)
+        FastReset.debug(FASTRESTE_PORTBACK_DISABLED)
+        return
+    end
+end
+
+function FastReset.portToLastValidZone()
+    if FastReset.ZoneID == -1 then
+        FastReset.debug(FASTRESET_ERROR_NO_TRIAL_SET)
+        return
+    end
+
+    local nodeIndex = FastReset.global.ZoneInfo[FastReset.ZoneID].nodeIndex
+    local _, name = GetFastTravelNodeInfo(nodeIndex)
+
+    ZO_Dialogs_ShowPlatformDialog("RECALL_CONFIRM", {nodeIndex = nodeIndex}, {mainTextParams = {FastReset.util.filterName(name)}})
+end
+
+function FastReset.setLastZone(_, _, _, zoneID, _)
+    -- zoneID = GetZoneId(GetUnitZone("player"))
+    -- only set zone if its registered in the global ZoneInfo table
+    for key, _ in pairs(FastReset.global.ZoneInfo) do
+        if zoneID == key then
+            FastReset.zoneID = zoneID
+            return
+        end
+    end
 end
 
 -- port to ulti house
@@ -36,7 +76,7 @@ function FastReset.Shared.PortToUltiHouse()
 end
 
 function FastReset.Shared.FastTravelBackToTrial()
-    local nodeIndex = FastReset.global.TrialInfo[FastReset.TrialZoneID].nodeIndex
+    local nodeIndex = FastReset.global.ZoneInfo[FastReset.ZoneID].nodeIndex
     local _, name = GetFastTravelNodeInfo(nodeIndex)
 
     ZO_Dialogs_ShowPlatformDialog("RECALL_CONFIRM", {nodeIndex = nodeIndex}, {mainTextParams = {FastReset.util.filterName(name)}})
@@ -127,7 +167,7 @@ local function onTrialStart(_, trialName, _)
         end
 	end
 
-    FastReset.TrialZoneID = GetZoneId(zoneIndex)
+    FastReset.ZoneID = GetZoneId(zoneIndex)
 
     FastReset.Share.EXITINSTANCE.VALUE = 0
     FastReset.Share.INNEWTRIAL.VALUE = 0
@@ -187,7 +227,7 @@ function FastReset.disable()
     FastReset.Shared.DisableAllListeners()
     FastReset.Leader.StopSharingData()
 
-    FastReset.TrialZoneID = -1
+    FastReset.ZoneID = -1
     
     FastReset.Share:Unregister()
     FastReset.savedVariables.enabled = false

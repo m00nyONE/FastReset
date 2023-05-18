@@ -7,6 +7,8 @@ local strings = {
     FASTRESET_RESETTING_INSTANCE = "setze Instanz zurück",
     FASTRESET_ULTIMATE_FULL = "Ulti ist voll",
     FASTRESET_ULTIMATE_FULL_SKIP_RECHARGE = "Ulti ist bereits voll, der Port in das Ulti-Haus wird übersprungen",
+    FASTRESTE_PORTBACK_ENABLED = "portBack tracking aktiviert",
+    FASTRESTE_PORTBACK_DISABLED = "portBack tracking deaktiviert",
 
     FASTRESET_ERROR_NOT_LEADER = "Nur der Gruppenleiter kann die Instanz zurücksetzen",
     FASTRESET_ERROR_NOT_IN_GROUP = "FastReset deaktiviert, da du nicht Mitglied einer Gruppe bist",
@@ -15,7 +17,7 @@ local strings = {
     FASTRESET_ERROR_NOTININSTANCE = "Du befindest dich in keiner Instanz",
     FASTRESET_ERROR_NOHOUSEDEFINED = "Du musst erst ein Ulti-Haus in den Addon-Einstellungen festlegen",
     FASTRESET_ERROR_ZONEISNOTHOME = "Du befindest dich nicht in einem Haus",
-    FASTRESET_ERROR_NO_TRIAL_SET = "Es wurde keine Prüfung gesetzt zu der du automatisch zurückporten kannst",
+    FASTRESET_ERROR_NO_TRIAL_SET = "Es wurde nichts gesetzt zu dem du automatisch zurückporten kannst",
 
     FASTRESET_DIALOG_PORT_TO_LEADER_TITLE = "TELEPORT ZUM GRUPPENLEITER",
     FASTRESET_DIALOG_PORT_TO_LEADER_TEXT = "Möchtest du dich zum Gruppenleiter teleportieren?",
@@ -70,6 +72,7 @@ local strings = {
     FASTRESET_SLASHCOMMAND_LEADER_DESCRIPTION = "teleportiert dich zum Gruppenleiter",
     FASTRESET_SLASHCOMMAND_LEAVE_DESCRIPTION = "schnelles Verlassen der Instanz",
     FASTRESET_SLASHCOMMAND_RESET_DESCRIPTION = "setzt die Instanz zurück",
+    FastReset_SLASHCOMMAND_PORTBACK_DESCRIPTION = "teleportiere zur letzten instanz zurück",
     FASTRESET_SLASHCOMMAND_SET_DESCRIPTION = "Setzt werte für FastReset",
     FASTRESET_SLASHCOMMAND_SET_ERROR_NOVALUE = "ERROR: Kein Wert spezifiziert",
     FASTRESET_SLASHCOMMAND_SET_DEATHS_DESCRIPTION = "<anzahl> - legt die Anzahl der Tode vor dem resetten der Instanz fest",
@@ -83,7 +86,6 @@ local strings = {
     SI_BINDING_NAME_FASTRESET_HOTKEY_ULTIHOME = "Porte ins Ulti-Haus",
     SI_BINDING_NAME_FASTRESET_HOTKEY_PORTTOLEADER = "Porte zum Leader",
     SI_BINDING_NAME_FASTRESET_HOTKEY_LEAVE = "verlasse Instanz (nur du)",
-    
 }
 
 for stringId, stringValue in pairs(strings) do
