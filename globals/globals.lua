@@ -2,7 +2,7 @@ FastReset = FastReset or {}
 FastReset.name = "FastReset"
 FastReset.color = "8B0000"
 FastReset.credits = "@m00nyONE"
-FastReset.version = "2.5.1"
+FastReset.version = "2.6.0"
 FastReset.variableVersion = 1
 FastReset.defaultVariables = {
     enabled = false,
@@ -43,6 +43,7 @@ FastReset.global.ZoneInfo = {
     [1196] = {nodeIndex = 434, longName = "Kyne's Aegis", shortName = "KA", type = "trial"},
     [1263] = {nodeIndex = 468, longName = "Rockgrove", shortName = "RG", type = "trial"},
     [1344] = {nodeIndex = 488, longName = "Dreadsail Reef", shortName = "DSR", type = "trial"},
+    [1427] = {nodeIndex= 534, longName = "Sanity's Edge", shortName = "SE", type = "trial"},
     -- Solo Arenas (fast Reset will only work in a group! also, you can not instant reset solo arenas )
     -- [377] = {nodeIndex = 250, longName = "Maelstrom Arena", shortName = "MSA", type = "arena"},
     -- [1227] = {nodeIndex = 457, longName = "Vateshran Arena", shortName = "VSA", type = "arena"},

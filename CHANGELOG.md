@@ -1,3 +1,7 @@
+## 2.6.0
+- add chinese translation ( thanks to @Lykeion )
+- add sanity's edge support
+
 ## 2.5.1
 - fix a small translation error that made the addon crash on english locale
 
