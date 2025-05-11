@@ -2,7 +2,6 @@ FastReset = FastReset or {}
 FastReset.name = "FastReset"
 FastReset.color = "8B0000"
 FastReset.credits = "@m00nyONE"
-FastReset.version = "2.6.0"
 FastReset.variableVersion = 1
 FastReset.defaultVariables = {
     enabled = false,

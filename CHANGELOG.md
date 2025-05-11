@@ -1,3 +1,6 @@
+## 2025.05.11
+- add CI/CD pipelines
+
 ## 2.6.0
 - add chinese translation ( thanks to @Lykeion )
 - add sanity's edge support

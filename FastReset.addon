@@ -1,0 +1,35 @@
+; This Add-on is not created by, affiliated with or sponsored by ZeniMax
+; Media Inc. or its affiliates. The Elder Scrolls® and related logos are
+; registered trademarks or trademarks of ZeniMax Media Inc. in the United
+; States and/or other countries. All rights reserved.
+; You can read the full terms at https://account.elderscrollsonline.com/add-on-terms
+
+## APIVersion: 101045 101046
+## Title: FastReset
+## Description: Reset instances faster
+## Author: m00nyONE
+## Version: dev
+## AddOnVersion: 99999999
+## SavedVariables: FastResetVars
+## DependsOn: LibAddonMenu-2.0 LibSlashCommander LibGroupBroadcast
+
+lang/en.lua
+lang/$(language).lua
+
+globals/globals.lua
+modules/util/util.lua
+modules/util/ultihome.lua
+
+logic/leader.lua
+logic/member.lua
+logic/shared.lua
+
+modules/share/dataShare.lua
+
+modules/cmd/cmd.lua
+modules/cmd/bindings.xml
+
+modules/menu/menu.lua
+
+FastReset.lua
+

@@ -1,10 +1,9 @@
-FastReset = FastReset or {}
+FastReset = FastReset or {
+    version = "dev"
+}
 
 function FastReset.OnAddOnLoaded(event, addonName)
     if addonName == FastReset.name then
-        local startupTimer = FastReset.util.Timer:New()
-        startupTimer:Start()
-
         EVENT_MANAGER:UnregisterForEvent(FastReset.name, EVENT_ADD_ON_LOADED)
 
         -- load saved variables ( global )
@@ -29,9 +28,6 @@ function FastReset.OnAddOnLoaded(event, addonName)
             FastReset.enable()
             zo_callLater(function() FastReset.debug(GetString(FASTRESET_ENABLED)) end, 6000)
         end
-
-        startupTimer:Stop()
-        startupTimer:AddToLoadTime()
     end
 end
 
