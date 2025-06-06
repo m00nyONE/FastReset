@@ -58,6 +58,13 @@
 --
 --
 
+local FR = {
+    name = "FastReset",
+    version = "dev"
+}
+
+FastReset.version = FR.version
+
 function FastReset.OnAddOnLoaded(event, addonName)
     if addonName == FastReset.name then
         EVENT_MANAGER:UnregisterForEvent(FastReset.name, EVENT_ADD_ON_LOADED)
