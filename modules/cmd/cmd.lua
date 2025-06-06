@@ -33,12 +33,6 @@ local function mainCommand()
     if not CanExitInstanceImmediately() then FastReset.debug(GetString(FASTRESET_ERROR_NOTININSTANCE)) return end
     if IsUnitGroupLeader("player") then
         FastReset.Leader.AutoResetInstance()
-        -- send additional hodor eject
-        if FastReset.savedVariables.sendAdditionalHodorEject then
-            if HodorReflexes then
-                HodorReflexes.modules.share.SendCustomData(22, true)
-            end
-        end
     end
 
     EVENT_MANAGER:RegisterForEvent(FastReset.name .. "KickRecieved", EVENT_PLAYER_ACTIVATED, function()

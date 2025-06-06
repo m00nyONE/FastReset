@@ -1,3 +1,8 @@
+## 2025.06.06
+- use LibGroupBroadcast for sharing data instead of LibDataSHare
+- prepare for FastReset 3.0
+- There is still A LOT todo until FastReset can be used again as it was meant to be
+
 ## 2025.05.11
 - add CI/CD pipelines
 

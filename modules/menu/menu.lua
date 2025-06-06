@@ -196,17 +196,6 @@ function FastReset.menu.createAddonMenu()
                     getFunc = function() return FastReset.savedVariables.confirmExit end,
                     setFunc = function() FastReset.savedVariables.confirmExit = not FastReset.savedVariables.confirmExit end,
                 },
-                [4] = {
-                    type = "checkbox",
-                    name = GetString(FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_HODOREJECT_TEXT),
-                    tooltip = GetString(FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_HODOREJECT_TOOLTIP),
-                    width = "full",
-                    default = false,
-                    getFunc = function() return FastReset.savedVariables.sendAdditionalHodorEject end,
-                    setFunc = function() FastReset.savedVariables.sendAdditionalHodorEject = not FastReset.savedVariables.sendAdditionalHodorEject end,
-                    warning = GetString(FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_HODOREJECT_WARNING),
-                    disabled = function() if HodorReflexes then return false end return true end
-                }
             }
         },
     }

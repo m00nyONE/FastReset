@@ -61,9 +61,6 @@ local strings = {
     FASTRESET_MENU_SECTION_DEATHDETECTION_SLIDER_DEATHCOUNT_TOOLTIP = "Setzt die Anzahl der Tode die spieler sterben dürfen bevor FastReset seine Automaisierung ausführt",
     FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_CONFIRMEXIT_TEXT = "Verlassen bestätigen",
     FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_CONFIRMEXIT_TOOLTIP = "Zeigt dir vor dem Kick durch den RaidLead einen Bestätigungsdialog an",
-    FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_HODOREJECT_TEXT = "zusätzlicher Hodor-Eject",
-    FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_HODOREJECT_TOOLTIP = "sende zusätzlich zum FastReset-Eject noch Hodor-Eject um Teilnehmer aus der Instanz zu werfen, die FastReset nicht installiert haben",
-    FASTRESET_MENU_SECTION_DEATHDETECTION_CHECKBOX_HODOREJECT_WARNING = "EXPERIMENTELL: zu viele Pings auf einmal können zu einem kick führen",
 
     FASTRESET_SLASHCOMMAND_DESCRIPTION = "startet FastReset manuell",
     FASTRESET_SLASHCOMMAND_ENABLE_DESCRIPTION = "aktiviert FastReset",

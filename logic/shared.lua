@@ -214,7 +214,6 @@ function FastReset.enable()
     EVENT_MANAGER:RegisterForEvent(FastReset.name .. "LeaderUpdate", EVENT_LEADER_UPDATE, leaderUpdate)
     EVENT_MANAGER:RegisterForEvent(FastReset.name .. "GroupUpdate", EVENT_GROUP_MEMBER_LEFT, groupMemberLeftUpdate)
 
-    FastReset.Share:Register()
     FastReset.savedVariables.enabled = true
 
     FastReset.debug(GetString(FASTRESET_ENABLED))
@@ -228,8 +227,7 @@ function FastReset.disable()
     FastReset.Leader.StopSharingData()
 
     FastReset.ZoneID = -1
-    
-    FastReset.Share:Unregister()
+
     FastReset.savedVariables.enabled = false
 
     FastReset.debug(GetString(FASTRESET_DISABLED))
